@@ -32,9 +32,9 @@ $(document).ready(function() {
 		}, 600);
 	});
 
-	var menuLinks = $('.list-top-menu__link');
+	var animatedLinks = $('.animate-scroll');
 
-	menuLinks.on('click', function(e) {
+	animatedLinks.on('click', function(e) {
 		e.preventDefault();
 		console.log(e.target.hash);
 		var sectionId = e.target.hash;
@@ -373,15 +373,15 @@ $(document).ready(function() {
 		var googleMap = new Maplace({
 			map_div: '#js-google-map-contacts',
 			locations: [{
-				lat: 45.463991,
-				lon: 9.187050,
+				lat: 47.269438,
+				lon: 7.950062,
 				title: 'Title A1',
-				html: '<p class="p">Cleaner LLC</p>',
+				html: '<p class="p">Zmyslowski-Dienstleistungen</p>',
 				icon: 'img/icons/map-marker-2.png',
-				zoom: 17
+				zoom: 15
 			}],
 			controls_type: 'list',
-			controls_on_map: false,
+			controls_on_map: true,
 			styles: {
 			        'Night': [{
 			            featureType: 'all',
@@ -494,4 +494,8 @@ $(document).ready(function() {
 		singleOpen: true
 	});
 
+	var startYear = 2020;
+	var presentYear = new Date().getFullYear();
+	var copyrightDate = startYear === presentYear ? startYear : startYear + ' - ' + presentYear;
+	$('.copyright-data').text(copyrightDate);
 });
